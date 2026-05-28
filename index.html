@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SaludPlus - Clínica</title>
+
+  <!-- Google Fonts: Inter + Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header" id="inicio">
+    <nav class="nav container">
+      <div class="brand">
+        <span class="logo">SaludPlus</span>
+      </div>
+
+      <ul class="nav-links" role="menubar" aria-label="Navegación principal">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#especialidades">Especialidades</a></li>
+        <li><a href="#medicos">Medicos</a></li>
+        <li><a href="#obras-sociales">Obras Sociales</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+
+      <div class="actions">
+        <button class="btn btn-outline" type="button">Iniciar sesión</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <h1 id="hero-title">Cuidamos tu salud con profesionalismo</h1>
+        <p class="lead">Atención integral y personalizada. Turnos rápidos y profesionales certificados.</p>
+
+        <div class="trust">
+          <div class="trust-item"><strong>15</strong><span>Años de experiencia</span></div>
+          <div class="trust-item"><strong>45,000+</strong><span>Pacientes atendidos</span></div>
+          <div class="trust-item"><strong>12</strong><span>Especialidades</span></div>
+        </div>
+
+        <a class="btn btn-primary" href="turnos.html">Solicitar turno</a>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <!-- Placeholder visual -->
+        <div class="visual-placeholder">Imagen / ilustración</div>
+      </div>
+    </section>
+
+    <!-- ESPECIALIDADES -->
+    <section id="especialidades" class="especialidades container" aria-labelledby="esp-title">
+      <h2 id="esp-title">Nuestras especialidades médicas</h2>
+
+      <div class="grid-especialidades">
+        <!-- Cada item: icono SVG minimal + nombre -->
+        <article class="esp-item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#c62828"/></svg>
+          <h3>Clínica General</h3>
+        </article>
+
+        <article class="esp-item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" fill="#1976d2"/></svg>
+          <h3>Cardiología</h3>
+        </article>
+
+        <article class="esp-item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L20 22 L4 22 Z" fill="#2e7d32"/></svg>
+          <h3>Pediatría</h3>
+        </article>
+
+        <article class="esp-item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3" fill="#6a1b9a"/><rect x="7" y="12" width="10" height="8" fill="#6a1b9a"/></svg>
+          <h3>Ginecología</h3>
+        </article>
+
+        <article class="esp-item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h18v4H3zM3 10h18v11H3z" fill="#ff8f00"/></svg>
+          <h3>Traumatología</h3>
+        </article>
+
+        <article class="esp-item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z" fill="#00796b"/></svg>
+          <h3>Neurología</h3>
+        </article>
+      </div>
+    </section>
+
+    <!-- MEDICOS -->
+    <section id="medicos" class="medicos container" aria-labelledby="medicos-title">
+      <h2 id="medicos-title">Nuestros Medicos</h2>
+
+      <div class="cards-medicos">
+        <article class="card-medico">
+          <div class="avatar" aria-hidden="true">Foto</div>
+          <div class="meta">
+            <h3>Dr. Ana García</h3>
+            <p class="small">Cardióloga</p>
+            <p class="quote">"Comprometida con tu salud cardiovascular."</p>
+          </div>
+        </article>
+
+        <article class="card-medico">
+          <div class="avatar" aria-hidden="true">Foto</div>
+          <div class="meta">
+            <h3>Dr. Juan Pérez</h3>
+            <p class="small">Pediatra</p>
+            <p class="quote">"Cuidado integral para los más pequeños."</p>
+          </div>
+        </article>
+
+        <article class="card-medico">
+          <div class="avatar" aria-hidden="true">Foto</div>
+          <div class="meta">
+            <h3>Dra. Laura Méndez</h3>
+            <p class="small">Ginecóloga</p>
+            <p class="quote">"Atención cercana y profesional."</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- OBRAS SOCIALES -->
+    <section id="obras-sociales" class="obras container" aria-labelledby="obras-title">
+      <h2 id="obras-title">Obras Sociales</h2>
+      <ul class="lista-obras">
+        <li>OSDE</li>
+        <li>Swiss Medical</li>
+        <li>Galeno</li>
+        <li>IOMA</li>
+        <li>Medicus</li>
+        <li>Sancor Salud</li>
+      </ul>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contacto container" aria-labelledby="contacto-title">
+      <h2 id="contacto-title">Contacto</h2>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p><strong>Dirección:</strong> Av. Salud 123, Ciudad</p>
+          <p><strong>Teléfono:</strong> (011) 1234-5678</p>
+          <p><strong>Email:</strong> info@saludplus.com</p>
+          <p><strong>Horario:</strong> Lun - Vie 8:00 - 20:00</p>
+        </div>
+
+        <div class="map-placeholder" aria-hidden="true">
+            <img
+              src="https://img.magnific.com/premium-vector/gps-map-navigator-concept-street-maps-directions-vector-illustration_230920-2779.jpg?w=2000"
+              alt="Mapa (placeholder)"
+              class="map-image"
+            >
+          </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> SaludPlus. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // pequeño script para año dinámico
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

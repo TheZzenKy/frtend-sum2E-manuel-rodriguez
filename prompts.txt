@@ -1,0 +1,24 @@
+
+
+Necesito que me hagas una estructura sementica que contenga un <header> con un <nav> dentro de este que contenga: 
+Logo de la clinica: "SaludPlus" (puede ser nombre), un navbar (nav-links: Inicio, Especialidades, Medicos, Obras Sociales y Contacto) y un 
+<button> para iniciar sesion, todo esto debe estar con un position: sticky. Al igual necesito un <main> que contenga 1 <section> la cual sera el hero, que contenga un <h1> como titulo principal
+y un <p> como subtitulo descriptivo, tambien necesito que tenga algunas indicadores de confianza (años de experiencia, pacientes atendidos y cantidadad de especialidades)
+y un <button> para Solicitar turno (el <button< debe estar enlazado a un <a href="turnos.html"). Un segundo <section> para una grilla de especialidades
+Medicas que contenga un <h2> (Nuestras especialidades medicas) y al menos 6 especialidades medicas (ej: Clinica General, Cardiologia, Pediatria,
+Ginecologia, Traumatologia, Neurologia) cada especialidad debe mostrar un icono (generalos en svg), debe estar implementado con CSS Grid (como minimo 3 columnas grandes).
+Un 3 <section> tipo cards con un <h2> que diga "Nuestros Medicos", con almenos 3 profesionales del equipo (con nombre completo, especialidad, breve frase)
+debe tener un Placeholder de imagen, el layout debe estar en flexbox. Un 4 <section> tipo lista con al menos 6 obras sociales (ej:OSDE, Swiss Medical,
+Galeno, IOMA, Medicus, Sancor Salud ) y una Presentacion clara con nombre de cada cobertura. Como ultimo una seccion de Cotacto y un Footer
+para la seccion contacto debe contener direccion, telefono, direccion, telefono, email, horario de atencion y un mapa tipo placeholder. 
+en el  <footer> debe tener los derechos reservados y el nombre del autor (nombre de la clinica) 
+
+Como riquisitos para el css utiliza: 
+Flexbox para el header y la seccion de Medicos. Una Paleta de colores coherente y de tipo profesional, acorde a un sitio medico (ej: rojo, blanco, etc).
+Una Tipografia legible (puedes usar Inter de google font y otra mas. Max 2) y el sitio debe verse correctamente en de al menos 1024px de ancho.
+
+Usar CSS Grid para la seccion de Especialidades.
+• Usar Flexbox para el header y la seccion de Medicos.
+• Paleta de colores coherente y profesional, acorde a un sitio medico.
+• Fuentes legibles; se puede usar Google Fonts (max. 2 familias).
+• El sitio debe verse correctamente en pantallas de al menos 1024px de ancho.
