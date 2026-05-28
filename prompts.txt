@@ -1,4 +1,4 @@
-
+PROMPT 1
 
 Necesito que me hagas una estructura sementica que contenga un <header> con un <nav> dentro de este que contenga: 
 Logo de la clinica: "SaludPlus" (puede ser nombre), un navbar (nav-links: Inicio, Especialidades, Medicos, Obras Sociales y Contacto) y un 
@@ -22,3 +22,62 @@ Usar CSS Grid para la seccion de Especialidades.
 • Paleta de colores coherente y profesional, acorde a un sitio medico.
 • Fuentes legibles; se puede usar Google Fonts (max. 2 familias).
 • El sitio debe verse correctamente en pantallas de al menos 1024px de ancho.
+pagina interactiva, agregar hover, etc.
+
+
+PROMPT 2
+
+Necesito que ahora en turnos.html realices un form con lo siguiente:
+datos de pacientes debe contener: 
+Nombre (type="text")
+Apellido (type="text")
+DNI (type="text")
+Correo electronico (type="email")
+Telefono (type="tel")
+Fecha de nacimiento (type="date")
+Genero (select): Masculino / Femenino / Otro / Prefiero no especificar.
+
+Datos del turno:
+Especialidad (select): Clinica General, Cardiologia, Pediatria, Ginecologia, Traumatologia,
+Neurologia.
+Medico (select): Las opciones deben cambiar segun la especialidad seleccionada. Incluye al menos
+2 medicos por especialidad. Este campo se habilita solo cuando hay una especialidad seleccionada.
+Tipo de consulta (select): Primera consulta / Control / Resultado de estudios.
+Fecha del turno (type="date").
+Hora del turno (type="time").
+Modalidad (select): Presencial / Videoconsulta.
+Plataforma preferida (select): Zoom / Google Meet / Teams. VISIBLE SOLO si la modalidad es
+"Videoconsulta".
+
+Cobertura Medica:
+Cobertura (select): OSDE / Swiss Medical / Galeno / IOMA / Medicus / Sancor Salud / Particular.
+pNumero de credencial (type="text"): VISIBLE SOLO si la cobertura NO es "Particular".
+Plan (type="text"): VISIBLE SOLO si la cobertura NO es "Particular".
+
+informacion Adicional:
+Primera visita (type="checkbox"): "Es la primera vez que consulta en SaludPlus". Al marcar esta
+opcion, se muestra el campo "Como nos conocio".
+Como nos conocio (select): Busqueda en internet / Recomendacion de un conocido / Redes
+sociales / Otro. VISIBLE SOLO si el checkbox anterior esta marcado.
+Motivo de consulta (textarea, rows="4"): Descripcion del motivo de la consulta.
+Estudios previos (type="checkbox"): "Tiene estudios previos relacionados con la consulta". Al
+marcar esta opcion, se muestra el campo "Descripcion de estudios".
+Descripcion de estudios (textarea, rows="3"): VISIBLE SOLO si el checkbox anterior esta marcado.
+
+y Boton de envio:
+Boton type="submit" con texto "Solicitar Turno".
+Boton type="reset" con texto "Limpiar formulario".
+
+Requisitos para el HTML (turnos.html): 
+Cada campo debe tener su etiqueta <label> con el atributo for correspondiente.
+Los grupos de campos deben estar dentro de <fieldset> con su respectivo <legend>.
+Usa tipos de input correctos (email, tel, date, time, text, checkbox).
+Agregar atributo placeholder descriptivo donde corresponda.
+Los campos de la Seccion 2 que dependen de la especialidad deben usar el atributo disabled y
+cambiar a enabled con JavaScript.
+
+Requesitos para el CSS (turnos.css):
+El Formulario debe estar centrado en la pantalla, con ancho maximo de 800px.
+Cada seccion (fieldset) debe tener estilos visuales (borde, fondo suave).
+Los campos ocultos deben tener display: none;.
+Aplicar estilos de hover y focus en los campos del formulario.

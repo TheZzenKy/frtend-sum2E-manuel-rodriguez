@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Solicitar Turno - SaludPlus</title>
+  <link rel="stylesheet" href="css/turnos.css">
+</head>
+<body>
+  <main class="page">
+    <form id="turnoForm" class="form" action="#" method="post" autocomplete="on">
+      <h1>Solicitar Turno</h1>
+
+      <fieldset>
+        <legend>Datos del paciente</legend>
+
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" type="text" placeholder="Ingresa tu nombre" />
+
+        <label for="apellido">Apellido</label>
+        <input id="apellido" name="apellido" type="text" placeholder="Ingresa tu apellido" />
+
+        <label for="dni">DNI</label>
+        <input id="dni" name="dni" type="text" placeholder="Ej: 20.123.456" />
+
+        <label for="email">Correo electrónico</label>
+        <input id="email" name="email" type="email" placeholder="correo@ejemplo.com" />
+
+        <label for="telefono">Teléfono</label>
+        <input id="telefono" name="telefono" type="tel" placeholder="+54 9 11 1234 5678" />
+
+        <label for="nacimiento">Fecha de nacimiento</label>
+        <input id="nacimiento" name="nacimiento" type="date" />
+
+        <label for="genero">Género</label>
+        <select id="genero" name="genero">
+          <option value="">Seleccionar</option>
+          <option>Masculino</option>
+          <option>Femenino</option>
+          <option>Otro</option>
+          <option>Prefiero no especificar</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Datos del turno</legend>
+
+        <label for="especialidad">Especialidad</label>
+        <select id="especialidad" name="especialidad">
+          <option value="">-- Elija una especialidad --</option>
+          <option>Clínica General</option>
+          <option>Cardiología</option>
+          <option>Pediatría</option>
+          <option>Ginecología</option>
+          <option>Traumatología</option>
+          <option>Neurología</option>
+        </select>
+
+        <label for="medico">Médico</label>
+        <select id="medico" name="medico" disabled>
+          <option value="">Seleccione especialidad primero</option>
+        </select>
+
+        <label for="tipo_consulta">Tipo de consulta</label>
+        <select id="tipo_consulta" name="tipo_consulta">
+          <option>Primera consulta</option>
+          <option>Control</option>
+          <option>Resultado de estudios</option>
+        </select>
+
+        <label for="fecha_turno">Fecha del turno</label>
+        <input id="fecha_turno" name="fecha_turno" type="date" />
+
+        <label for="hora_turno">Hora del turno</label>
+        <input id="hora_turno" name="hora_turno" type="time" />
+
+        <label for="modalidad">Modalidad</label>
+        <select id="modalidad" name="modalidad">
+          <option>Presencial</option>
+          <option>Videoconsulta</option>
+        </select>
+
+        <div id="plataforma_wrap" class="conditional hidden" aria-hidden="true">
+          <label for="plataforma">Plataforma preferida</label>
+          <select id="plataforma" name="plataforma" disabled>
+            <option>Zoom</option>
+            <option>Google Meet</option>
+            <option>Teams</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Cobertura médica</legend>
+
+        <label for="cobertura">Cobertura</label>
+        <select id="cobertura" name="cobertura">
+          <option>OSDE</option>
+          <option>Swiss Medical</option>
+          <option>Galeno</option>
+          <option>IOMA</option>
+          <option>Medicus</option>
+          <option>Sancor Salud</option>
+          <option>Particular</option>
+        </select>
+
+        <div id="credencial_wrap" class="conditional hidden" aria-hidden="true">
+          <label for="num_credencial">Número de credencial</label>
+          <input id="num_credencial" name="num_credencial" type="text" placeholder="N° de credencial" disabled />
+        </div>
+
+        <div id="plan_wrap" class="conditional hidden" aria-hidden="true">
+          <label for="plan">Plan</label>
+          <input id="plan" name="plan" type="text" placeholder="Nombre del plan" disabled />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Información adicional</legend>
+
+        <label class="checkbox">
+          <input id="primera_visita" name="primera_visita" type="checkbox" />
+          Es la primera vez que consulta en SaludPlus
+        </label>
+
+        <div id="como_wrap" class="conditional hidden" aria-hidden="true">
+          <label for="como">Cómo nos conoció</label>
+          <select id="como" name="como" disabled>
+            <option>Búsqueda en internet</option>
+            <option>Recomendación de un conocido</option>
+            <option>Redes sociales</option>
+            <option>Otro</option>
+          </select>
+        </div>
+
+        <label for="motivo">Motivo de consulta</label>
+        <textarea id="motivo" name="motivo" rows="4" placeholder="Describa brevemente el motivo de la consulta"></textarea>
+
+        <label class="checkbox">
+          <input id="estudios_previos" name="estudios_previos" type="checkbox" />
+          Tiene estudios previos relacionados con la consulta
+        </label>
+
+        <div id="desc_estudios_wrap" class="conditional hidden" aria-hidden="true">
+          <label for="desc_estudios">Descripción de estudios</label>
+          <textarea id="desc_estudios" name="desc_estudios" rows="3" placeholder="Describa los estudios previos" disabled></textarea>
+        </div>
+      </fieldset>
+
+      <div class="form-actions">
+        <button type="submit" class="btn primary">Solicitar Turno</button>
+        <button type="reset" class="btn secondary">Limpiar formulario</button>
+      </div>
+    </form>
+  </main>
+  <script>
+    (function(){
+      const specialtySelect = document.getElementById('especialidad');
+      const medicoSelect = document.getElementById('medico');
+      const modalidad = document.getElementById('modalidad');
+      const plataformaWrap = document.getElementById('plataforma_wrap');
+      const plataformaSelect = document.getElementById('plataforma');
+
+      const cobertura = document.getElementById('cobertura');
+      const credWrap = document.getElementById('credencial_wrap');
+      const planWrap = document.getElementById('plan_wrap');
+      const numCred = document.getElementById('num_credencial');
+      const plan = document.getElementById('plan');
+
+      const primera = document.getElementById('primera_visita');
+      const comoWrap = document.getElementById('como_wrap');
+      const como = document.getElementById('como');
+
+      const estudiosPrev = document.getElementById('estudios_previos');
+      const descEstWrap = document.getElementById('desc_estudios_wrap');
+      const descEst = document.getElementById('desc_estudios');
+
+      const medicosPorEspecialidad = {
+        "Clínica General": ["Dra. Marta Ruiz", "Dr. Carlos Gómez"],
+        "Cardiología": ["Dr. Ana García", "Dr. Luis Moreno"],
+        "Pediatría": ["Dra. Laura Méndez", "Dr. Juan Pérez"],
+        "Ginecología": ["Dra. Sandra López", "Dra. Paula Fernández"],
+        "Traumatología": ["Dr. Martín Díaz", "Dr. Federico Ruiz"],
+        "Neurología": ["Dra. Natalia Ortiz", "Dr. Emiliano Ríos"]
+      };
+
+      function setVisibility(wrapper, elem, visible) {
+        wrapper.classList.toggle('hidden', !visible);
+        wrapper.setAttribute('aria-hidden', String(!visible));
+        elem.disabled = !visible;
+        if (!visible) {
+          if (elem.tagName === 'SELECT' || elem.tagName === 'INPUT' || elem.tagName === 'TEXTAREA') {
+            // clear value when hidden
+            elem.value = elem.tagName === 'SELECT' ? '' : '';
+          }
+        }
+      }
+
+      // Especialidad -> Medicos
+      specialtySelect.addEventListener('change', function(){
+        const esp = this.value;
+        medicoSelect.innerHTML = '';
+        if (!esp || !medicosPorEspecialidad[esp]) {
+          medicoSelect.disabled = true;
+          medicoSelect.innerHTML = '<option value="">Seleccione especialidad primero</option>';
+          return;
+        }
+        medicoSelect.disabled = false;
+        const opts = medicosPorEspecialidad[esp];
+        const placeholder = document.createElement('option');
+        placeholder.value = '';
+        placeholder.textContent = '-- Seleccione médico --';
+        medicoSelect.appendChild(placeholder);
+        opts.forEach(m => {
+          const o = document.createElement('option');
+          o.value = m;
+          o.textContent = m;
+          medicoSelect.appendChild(o);
+        });
+      });
+
+      // Modalidad -> Plataforma
+      function updatePlataforma() {
+        const isVideo = modalidad.value === 'Videoconsulta';
+        setVisibility(plataformaWrap, plataformaSelect, isVideo);
+      }
+      modalidad.addEventListener('change', updatePlataforma);
+      updatePlataforma();
+
+      // Cobertura -> Credencial y Plan
+      function updateCobertura() {
+        const isParticular = cobertura.value === 'Particular';
+        setVisibility(credWrap, numCred, !isParticular);
+        setVisibility(planWrap, plan, !isParticular);
+      }
+      cobertura.addEventListener('change', updateCobertura);
+      updateCobertura();
+
+      // Primera visita -> Como nos conocio
+      function updatePrimera() {
+        setVisibility(comoWrap, como, primera.checked);
+      }
+      primera.addEventListener('change', updatePrimera);
+      updatePrimera();
+
+      // Estudios previos -> Descripcion
+      function updateEstudios() {
+        setVisibility(descEstWrap, descEst, estudiosPrev.checked);
+      }
+      estudiosPrev.addEventListener('change', updateEstudios);
+      updateEstudios();
+
+      // Optional: prevent real submit for demo and show form data in console
+      const form = document.getElementById('turnoForm');
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const data = new FormData(form);
+        // log only (no enviar)
+        console.log('Solicitud de turno (demo):');
+        for (const [k,v] of data.entries()) console.log(k, v);
+        alert('Formulario enviado (demo). Revisa la consola para ver los datos.');
+      });
+    })();
+  </script>
+</body>
+</html>
